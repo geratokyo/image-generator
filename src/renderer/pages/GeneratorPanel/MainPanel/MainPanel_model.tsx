@@ -36,7 +36,7 @@ export class MainPanelModel {
   }
 
   generate = () => {
-    this.imageGenerator.startCreating(races)
+    this.imageGenerator.startCreating(races as any)
   }
 }
 

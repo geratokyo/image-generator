@@ -7,7 +7,7 @@ export interface HomePageProps {
 }
 
 
-export const HomePage: React.FC<HomePageProps> = (props) => {
+export const HomePage: React.FC<HomePageProps> = () => {
   return <Page>
     <MainPanel />
   </Page>

@@ -4,7 +4,7 @@ import {
   createCanvas,
   loadImage,
   NodeCanvasRenderingContext2D,
-} from "canvas";
+} from "../../../../release/app/node_modules/canvas";
 import { ImageGeneratorConfig } from "./ImageGenerator_config";
 import * as fs from "fs";
 // import * as electron from "electron";
@@ -169,7 +169,7 @@ export class ImageGenerator {
     );
   };
 
-  startCreating = async (races) => {
+  startCreating = async (races: any) => {
     this.writeMetaData("");
     let editionCount = this.config.startEditionFrom;
     while (editionCount <= this.config.endEditionAt) {

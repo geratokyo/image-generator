@@ -7,12 +7,14 @@
     "declarationMap": true,
     "jsx": "react-jsx",
     "strict": true,
+    "strictPropertyInitialization": false,
     "pretty": true,
     "sourceMap": true,
     "baseUrl": "./src",
     /* Additional Checks */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "experimentalDecorators": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     /* Module Resolution Options */

@@ -8,7 +8,7 @@ export interface MainPanelProps {
 
 }
 
-export const MainPanel: React.FC<MainPanelProps> = (props) => {
+export const MainPanel: React.FC<MainPanelProps> = () => {
   const [model,] = useState(() => new MainPanelModel())
   useEffect(() => {
     model.onMount();

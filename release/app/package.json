@@ -16,9 +16,11 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@types/fs-extra": "^9.0.13",
     "aws-sdk": "^2.1013.0",
     "canvas": "^2.8.0",
     "fs": "^0.0.1-security",
+    "fs-extra": "^10.0.0",
     "history": "^5.0.1",
     "lzma-native": "^8.0.1"
   }

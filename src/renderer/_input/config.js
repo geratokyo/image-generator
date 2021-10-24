@@ -1,51 +1,20 @@
-import { ImageGenerator } from "../../../services/ImageGenerator/ImageGenerator";
+const fs = require("fs");
+const width = 1000;
+const height = 1000;
+const dir = __dirname;
+const description = "This is an NFT made by the coolest generative code.";
+const baseImageUri = "https://hashlips/nft";
+const startEditionFrom = 1;
+const endEditionAt = 10;
+const editionSize = 10;
+const raceWeights = [
+  {
+    value: "skull",
+    from: 1,
+    to: editionSize,
+  },
+];
 
-
-import * as path from "path";
-
-export class MainPanelModel {
-
-  imageGenerator: ImageGenerator;
-  /**
-   *
-   */
-  constructor() {
-    this.imageGenerator = new ImageGenerator({
-      width: 1000,
-      height: 1000,
-      dir: "./",
-      description: "This is an NFT made by the coolest generative code.",
-      baseImageUri: "https://hashlips/nft",
-      startEditionFrom: 1,
-      endEditionAt: 10,
-      editionSize: 10,
-      outputDir: "/Users/gera/Projects/nft-image-generator/react-boilerplate/_output/",
-      raceWeights: [
-        {
-          value: "skull",
-          from: 1,
-          to: 10,
-        }
-      ]
-    });
-  }
-  onMount = () => {
-  }
-  onUnmount = () => {
-
-  }
-
-  generate = () => {
-    this.imageGenerator.startCreating(races as any)
-  }
-}
-
-
-
-
-const dir = path.join(
-  __dirname, "../../../../../../../../",`_input`);
-console.log(dir);
 const races = {
   skull: {
     name: "Skull",
@@ -67,7 +36,7 @@ const races = {
           },
         ],
         position: { x: 0, y: 0 },
-        size: { width: 1000, height: 1000 },
+        size: { width: width, height: height },
       },
       {
         name: "Suit",
@@ -86,7 +55,7 @@ const races = {
           },
         ],
         position: { x: 0, y: 0 },
-        size: { width: 1000, height: 1000 },
+        size: { width: width, height: height },
       },
       {
         name: "Shoulder",
@@ -105,7 +74,7 @@ const races = {
           },
         ],
         position: { x: 0, y: 0 },
-        size: { width: 1000, height: 1000 },
+        size: { width: width, height: height },
       },
       {
         name: "Pin",
@@ -124,7 +93,7 @@ const races = {
           },
         ],
         position: { x: 0, y: 0 },
-        size: { width: 1000, height: 1000 },
+        size: { width: width, height: height },
       },
       {
         name: "Race",
@@ -137,7 +106,7 @@ const races = {
           },
         ],
         position: { x: 0, y: 0 },
-        size: { width: 1000, height: 1000 },
+        size: { width: width, height: height },
       },
       {
         name: "Facial hair",
@@ -150,7 +119,7 @@ const races = {
           },
         ],
         position: { x: 0, y: 0 },
-        size: { width: 1000, height: 1000 },
+        size: { width: width, height: height },
       },
       {
         name: "Mask",
@@ -169,7 +138,7 @@ const races = {
           },
         ],
         position: { x: 0, y: 0 },
-        size: { width: 1000, height: 1000 },
+        size: { width: width, height: height },
       },
       {
         name: "Hair",
@@ -188,7 +157,7 @@ const races = {
           },
         ],
         position: { x: 0, y: 0 },
-        size: { width: 1000, height: 1000 },
+        size: { width: width, height: height },
       },
       {
         name: "Accessories",
@@ -201,7 +170,7 @@ const races = {
           },
         ],
         position: { x: 0, y: 0 },
-        size: { width: 1000, height: 1000 },
+        size: { width: width, height: height },
       },
       {
         name: "Headwear",
@@ -214,8 +183,20 @@ const races = {
           },
         ],
         position: { x: 0, y: 0 },
-        size: { width: 1000, height: 1000 },
+        size: { width: width, height: height },
       },
     ],
   },
+};
+
+module.exports = {
+  width,
+  height,
+  description,
+  baseImageUri,
+  editionSize,
+  startEditionFrom,
+  endEditionAt,
+  races,
+  raceWeights,
 };

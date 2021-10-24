@@ -4,14 +4,12 @@ import {
   createCanvas,
   loadImage,
   NodeCanvasRenderingContext2D,
-} from "../../../../release/app/node_modules/canvas";
+} from "../../../node_modules/canvas";
 import { ImageGeneratorConfig } from "./ImageGenerator_config";
 import * as fs from "fs";
-// import * as electron from "electron";
-// const fs = window.require("fs");
+import * as path from "path";
 
 const EXPORT_FILE_FORMAT = "png";
-
 export class ImageGenerator {
   metadataList: any[] = [];
   attributesList: any[] = [];
@@ -91,7 +89,9 @@ export class ImageGenerator {
 
   loadLayerImg = async (_layer: any) => {
     return new Promise(async (resolve) => {
-      const image = await loadImage(`${_layer.selectedElement.path}`);
+      const image = await loadImage(
+        path.join(`${_layer.selectedElement.path}`)
+      );
       resolve({ layer: _layer, loadedImage: image });
     });
   };
@@ -156,7 +156,6 @@ export class ImageGenerator {
   };
 
   writeMetaData = (_data: any) => {
-    console.log(fs);
     fs.writeFileSync(`${this.config.outputDir}_metadata.json`, _data);
   };
 
@@ -173,7 +172,6 @@ export class ImageGenerator {
     this.writeMetaData("");
     let editionCount = this.config.startEditionFrom;
     while (editionCount <= this.config.endEditionAt) {
-      console.log(editionCount);
       let race = this.getRace(editionCount);
       let newDna = this.createDna(races, race);
 
